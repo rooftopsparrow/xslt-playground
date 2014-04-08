@@ -2,6 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output method="html" doctype-system="about:legacy-compat" />
+
     <xsl:template match="/">
         <html lang="en">
         <head>
@@ -35,6 +36,22 @@
                     </tbody>
                 </table>
             </section>
+            <section class="preparation">
+                <h3>Preparation</h3>
+                <ol>
+                   <xsl:apply-templates select="ingredient/preparation" />
+                   <xsl:apply-templates select="preparation" />
+                </ol>
+            </section>
+            <xsl:if test="comment">
+                <section class="comments">
+                    <h3>Additional Comments</h3> 
+                    <xsl:apply-templates select="comment" />
+                </section>
+            </xsl:if>
+            <!-- <section class="nutrition"> -->
+               <!-- <xsl:apply-templates /> -->
+            <!-- </section> -->
         </article>
     </xsl:template>
 
@@ -67,9 +84,17 @@
     </xsl:template>
 
     <xsl:template match="preparation">
+        <xsl:apply-templates select="step" />
+    </xsl:template>
+
+    <xsl:template match="step">
         <li>
+            <xsl:value-of select="." />
         </li>
     </xsl:template>
 
+    <xsl:template match="comment">
+        <xsl:value-of select="." />
+    </xsl:template>
 
 </xsl:stylesheet>
