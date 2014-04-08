@@ -49,9 +49,20 @@
                     <xsl:apply-templates select="comment" />
                 </section>
             </xsl:if>
-            <!-- <section class="nutrition"> -->
-               <!-- <xsl:apply-templates /> -->
-            <!-- </section> -->
+            <section class="nutrition">
+                <h3>Nutrition</h3>
+                <table>
+                    <thead>
+                        <th>Calories</th>
+                        <th>Fat</th>
+                        <th>Carbohydrates</th>
+                        <th>Protien</th>
+                    </thead>
+                    <tbody>
+                        <xsl:apply-templates select="nutrition" />
+                    </tbody>
+                </table>
+            </section>
         </article>
     </xsl:template>
 
@@ -65,8 +76,7 @@
             </tr>
             <xsl:apply-templates select="ingredient" />
         </xsl:when>
-        <xsl:otherwise>
-            <tr>
+        <xsl:otherwise> <tr>
                 <td>
                     <xsl:value-of select="@name" /> 
                 </td>
@@ -96,5 +106,23 @@
     <xsl:template match="comment">
         <xsl:value-of select="." />
     </xsl:template>
+
+    <xsl:template match="nutrition">
+        <tr>
+            <td>
+                <xsl:value-of select="@calories" />
+            </td>
+            <td>
+                <xsl:value-of select="@fat" />
+            </td>
+            <td>
+                <xsl:value-of select="@carbohydrates" />
+            </td>
+            <td>
+                <xsl:value-of select="@protein" />
+            </td>
+        </tr>
+    </xsl:template>
+
 
 </xsl:stylesheet>
