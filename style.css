@@ -1,0 +1,46 @@
+body {
+    line-height: 1.3em;
+    font-family: Helvetica, sans-serif;
+    padding: 0 ;
+    color: #1A1A1A;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+ol {
+    margin-left: 20px; 
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    padding: 15px 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
+
+th {
+    padding: 8px 2px;
+    font-weight: normal;
+    border-bottom: 1px solid black;
+}
+
+
+
+td {
+    padding: 12px 2px 0 2px;
+    border-right: 30px solid #fff;
+    border-left: 30px solid #fff;
+}
+
+.recipe .title {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+}
