@@ -1,2 +1,2 @@
 default:
-	xsltproc transform.xsl recipes.xml
+	@xsltproc transform.xsl recipes.xml
