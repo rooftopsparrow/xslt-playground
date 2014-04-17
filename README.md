@@ -1,9 +1,12 @@
 # xslt-cookbook
 
-Jonathan Nicholson
+Jonathan Nicholson  
+Available on [Github](https://github.com/rooftopsparrow/xslt-playground)
 
 The purpose of this project is to use XSL Transformations to convert
 an XML recipe file into html.
+
+![Generated Cookbook](cookbook.png)
 
 Each recipe can have:
 
@@ -25,3 +28,11 @@ by a table of the ingredients.
     2. An ordered list of steps
 5. comments - with an `h3` header
 6. table of nutrition information with an `h3` header.
+
+## Build
+
+To create the html, just run `make` and redirect output.
+
+```
+make > index.html
+```
